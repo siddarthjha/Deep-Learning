@@ -26,3 +26,21 @@ def load_dataset(flatten=False):
     
 		
     return X_train, y_train, X_val, y_val, X_test, y_test
+
+X_train, y_train, X_val, y_val, X_test, y_test = load_dataset()
+
+## Printing dimensions
+print(X_train.shape, y_train.shape)
+
+## Visualizing the first digit
+plt.imshow(X_train[0], cmap="Greys")
+plt.show()
+
+## Changing dimension of input images from N*28*28 to  N*784
+X_train = X_train.reshape((X_train.shape[0],X_train.shape[1]*X_train.shape[2]))
+X_test = X_test.reshape((X_test.shape[0],X_test.shape[1]*X_test.shape[2]))
+print('Train dimension:')
+print(X_train.shape)
+print('Test dimension:')
+print(X_test.shape)
+
