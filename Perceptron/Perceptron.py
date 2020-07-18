@@ -11,7 +11,7 @@ s = tf.InteractiveSession()
 def load_dataset(flatten=False):
     (X_train, y_train), (X_test, y_test) = keras.datasets.mnist.load_data()
 	
-	# normalize x
+    # normalize x
     X_train = X_train.astype(float) / 255
     X_test = X_test.astype(float) / 255
 	
