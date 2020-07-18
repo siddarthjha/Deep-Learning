@@ -47,3 +47,11 @@ print(X_train.shape)
 print('Test dimension:')
 print(X_test.shape)
 
+## Changing labels to one-hot encoded vector
+lb = LabelBinarizer()
+y_train = lb.fit_transform(y_train)
+y_test = lb.transform(y_test)
+print('Train labels dimension:')
+print(y_train.shape)
+print('Test labels dimension:')
+print(y_test.shape) 
