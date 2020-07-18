@@ -36,6 +36,9 @@ print(X_train.shape, y_train.shape)
 plt.imshow(X_train[0], cmap="Greys")
 plt.show()
 
+# As we can see our current data have dimension N 28*28, we will start by flattening the image in N*784, 
+# and one-hot encode our target variable.
+
 ## Changing dimension of input images from N*28*28 to  N*784
 X_train = X_train.reshape((X_train.shape[0],X_train.shape[1]*X_train.shape[2]))
 X_test = X_test.reshape((X_test.shape[0],X_test.shape[1]*X_test.shape[2]))
