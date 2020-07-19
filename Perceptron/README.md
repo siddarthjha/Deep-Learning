@@ -1,6 +1,7 @@
 # Implementaion of a multi layer perceptron using Tensorflow
 
 We will be building 
+
 784(Input)
 
 512(Hidden layer 1)
