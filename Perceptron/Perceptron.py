@@ -93,3 +93,16 @@ weights_1 = tf.Variable(tf.random_normal([num_layers_0,num_layers_1], stddev=(1/
 bias_1 = tf.Variable(tf.random_normal([num_layers_1]))
 weights_2 = tf.Variable(tf.random_normal([num_layers_1,num_output], stddev=(1/tf.sqrt(float(num_layers_1)))))
 bias_2 = tf.Variable(tf.random_normal([num_output]))
+
+# Initializing weigths and biases
+hidden_output_0 = tf.nn.relu(tf.matmul(input_X,weights_0)+bias_0)
+hidden_output_0_0 = tf.nn.dropout(hidden_output_0, keep_prob)
+hidden_output_1 = tf.nn.relu(tf.matmul(hidden_output_0_0,weights_1)+bias_1)
+hidden_output_1_1 = tf.nn.dropout(hidden_output_1, keep_prob)
+predicted_y = tf.sigmoid(tf.matmul(hidden_output_1_1,weights_2) + bias_2)
+
+# Defining the loss function
+loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits_v2(logits=predicted_y,labels=input_y)) \
+        + regularizer_rate*(tf.reduce_sum(tf.square(bias_0)) + tf.reduce_sum(tf.square(bias_1)))
+
+# Variable learning rate
