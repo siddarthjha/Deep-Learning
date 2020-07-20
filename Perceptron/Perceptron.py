@@ -66,3 +66,21 @@ print('Train labels dimension:')
 print(y_train.shape)
 print('Test labels dimension:')
 print(y_test.shape) 
+
+num_classes = y_train.shape[1]
+num_features = X_train.shape[1]
+num_output = y_train.shape[1]
+num_layers_0 = 512
+num_layers_1 = 256
+starter_learning_rate = 0.001
+regularizer_rate = 0.1
+
+tf.compat.v1.disable_eager_execution()
+
+# Placeholders for the input data
+# Placeholders- A way to feed data into graphs
+input_X = tf.placeholder('float32',shape =(None,num_features),name="input_X")
+input_y = tf.placeholder('float32',shape = (None,num_classes),name='input_Y')
+## for dropout layer
+keep_prob = tf.placeholder(tf.float32)
+
