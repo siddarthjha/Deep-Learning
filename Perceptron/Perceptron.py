@@ -138,3 +138,13 @@ for epoch in range(epochs):
     print("Epoch:{0}, Train loss: {1:.2f} Train acc: {2:.3f}, Test acc:{3:.3f}".format(epoch, training_loss[epoch],training_accuracy[epoch],
     testing_accuracy[epoch]))
 
+
+# Plotting chart of training and testing accuracy as a function of iterations
+iterations = list(range(epochs))
+plt.plot(iterations, training_accuracy, label='Train')
+plt.plot(iterations, testing_accuracy, label='Test')
+plt.ylabel('Accuracy')
+plt.xlabel('iterations')
+plt.show()
+print("Train Accuracy: {0:.2f}".format(training_accuracy[-1]))
+print("Test Accuracy:{0:.2f}".format(testing_accuracy[-1]))
