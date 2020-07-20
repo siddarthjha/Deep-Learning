@@ -114,3 +114,12 @@ optimizer = tf.train.AdamOptimizer(learning_rate).minimize(loss,var_list=[weight
 correct_prediction = tf.equal(tf.argmax(y_train,1), tf.argmax(predicted_y,1))
 accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 
+# Training parameters
+batch_size = 128
+epochs=14
+dropout_prob = 0.6
+training_accuracy = []
+training_loss = []
+testing_accuracy = []
+
+s = tf.compat.v1.InteractiveSession()
