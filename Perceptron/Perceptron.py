@@ -84,3 +84,12 @@ input_y = tf.placeholder('float32',shape = (None,num_classes),name='input_Y')
 ## for dropout layer
 keep_prob = tf.placeholder(tf.float32)
 
+# As dense layers require weights and biases and they need to be initialized with 
+# a random normal distribution with zero mean and small variance (1/square root of the number of features).
+ 
+weights_0 = tf.Variable(tf.random_normal([num_features,num_layers_0], stddev=(1/tf.sqrt(float(num_features)))))
+bias_0 = tf.Variable(tf.random_normal([num_layers_0]))
+weights_1 = tf.Variable(tf.random_normal([num_layers_0,num_layers_1], stddev=(1/tf.sqrt(float(num_layers_0)))))
+bias_1 = tf.Variable(tf.random_normal([num_layers_1]))
+weights_2 = tf.Variable(tf.random_normal([num_layers_1,num_output], stddev=(1/tf.sqrt(float(num_layers_1)))))
+bias_2 = tf.Variable(tf.random_normal([num_output]))
