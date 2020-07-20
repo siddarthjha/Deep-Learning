@@ -106,3 +106,11 @@ loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits_v2(logits=predicte
         + regularizer_rate*(tf.reduce_sum(tf.square(bias_0)) + tf.reduce_sum(tf.square(bias_1)))
 
 # Variable learning rate
+learning_rate = tf.train.exponential_decay(starter_learning_rate, 0, 5, 0.85, staircase=True)
+## Adam optimzer for finding the right weight
+optimizer = tf.train.AdamOptimizer(learning_rate).minimize(loss,var_list=[weights_0, weights_1, weights_2, bias_0, bias_1, bias_2])
+
+# Metrics definition
+correct_prediction = tf.equal(tf.argmax(y_train,1), tf.argmax(predicted_y,1))
+accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
+
