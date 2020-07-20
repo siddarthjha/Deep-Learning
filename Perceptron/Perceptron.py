@@ -1,3 +1,14 @@
+"""
+Python Modules required are:
+1
+1.keras
+2.sklearn
+3.numpy
+4.tensorflow 
+(After installing tensorflow update keras).
+
+"""
+
 import keras
 from sklearn.preprocessing import LabelBinarizer
 import matplotlib.pyplot as plt
