@@ -2,12 +2,12 @@
 
 We will be building 
 
-784(Input)
+* 784(Input)
 
-512(Hidden layer 1)
+* 512(Hidden layer 1)
 
-256(Hidden layer 2)
+* 256(Hidden layer 2)
 
-10(Output) neural network model.
+* 10(Output) neural network model.
 
 
