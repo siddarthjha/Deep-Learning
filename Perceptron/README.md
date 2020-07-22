@@ -14,4 +14,5 @@ This is a **Deep Neural network**
 1. Inputs/Input Layer.
 2. Weights & Bias.
 3. Net Sum.
+4. Activation Function (Sigmoid, tanh, RELu)
 
