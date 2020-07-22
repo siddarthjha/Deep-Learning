@@ -22,6 +22,6 @@ This works in the same way as a neural network works:
 
 **Why Weight?**
 
-Because it shows the strength of the particular node
+Because it shows the strength of the particular node.
 
-The weights can be intialized at random
+The weights can be intialized at random.
