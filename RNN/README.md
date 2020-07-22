@@ -9,4 +9,8 @@
 ###### Example:
 For prediction of words in a sentence like
 
-Sun rises from ______.
+1. Sun rises from ______.
+2. An ______ a day keeps a doctor away.
+
+
+# LSTM'S
