@@ -1,4 +1,4 @@
-# Recurrence Neural Network:
+# Recurrence Neural Network (RNN):
 * It is similar to a normal Neural network with tiny changes.
 
 * Here we add **Recurrence** functionality to a Neural network along with **Back Propogation**.
