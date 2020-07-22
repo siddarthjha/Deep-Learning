@@ -10,4 +10,6 @@ We will be building
 
 * 10(Output) neural network model.
 
-
+This is a **Deep Neural network**
+1. Inputs/Input Layer.
+2. Weights & Bias.
