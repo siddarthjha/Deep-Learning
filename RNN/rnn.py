@@ -91,3 +91,5 @@ sample_pred_text = ('The movie was cool. The animation and the graphics '
                     'were out of this world. I would recommend this movie.')
 predictions = sample_predict(sample_pred_text, pad=True)
 print(predictions)
+
+plot_graphs(history, 'accuracy')
