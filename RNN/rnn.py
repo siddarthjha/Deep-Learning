@@ -36,3 +36,7 @@ original_string = encoder.decode(encoded_string)
 print('The original string: "{}"'.format(original_string))
 
 assert original_string == sample_string
+for index in encoded_string:
+  print('{} ----> {}'.format(index, encoder.decode([index])))
+
+# Prepare the data for training
