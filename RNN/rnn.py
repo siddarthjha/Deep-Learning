@@ -57,3 +57,12 @@ model = tf.keras.Sequential([
 model.compile(loss=tf.keras.losses.BinaryCrossentropy(from_logits=True), optimizer=tf.keras.optimizers.Adam(1e-4), metrics=['accuracy'])
 # Train the model
 history = model.fit(train_dataset, epochs=10, validation_data=test_dataset, validation_steps=30)
+
+test_loss, test_acc = model.evaluate(test_dataset)
+print('Test Loss: {}'.format(test_loss))
+print('Test Accuracy: {}'.format(test_acc))
+
+def pad_to_size(vec, size):
+  zeros = [0] * (size - len(vec))
+  vec.extend(zeros)
+  return vec
