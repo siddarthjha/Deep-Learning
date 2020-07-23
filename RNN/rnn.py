@@ -93,3 +93,5 @@ predictions = sample_predict(sample_pred_text, pad=True)
 print(predictions)
 
 plot_graphs(history, 'accuracy')
+plot_graphs(history, 'loss')
+
