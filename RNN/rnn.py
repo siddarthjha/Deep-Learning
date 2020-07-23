@@ -18,3 +18,8 @@ def plot_graphs(history, metric):
   plt.ylabel(metric)
   plt.legend([metric, 'val_'+metric])
   plt.show()
+
+# Load Dataset for IMDB movie review 
+dataset, info = tfds.load('imdb_reviews/subwords8k', with_info=True,
+                          as_supervised=True)
+train_dataset, test_dataset = dataset['train'], dataset['test']
