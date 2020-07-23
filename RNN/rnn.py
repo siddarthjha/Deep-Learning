@@ -27,3 +27,10 @@ train_dataset, test_dataset = dataset['train'], dataset['test']
 # The dataset info includes the encoder (a tfds.features.text.SubwordTextEncoder).
 encoder = info.features['text'].encoder
 print('Vocabulary size: {}'.format(encoder.vocab_size))
+
+# This text encoder will reversibly encode any string, falling back to byte-encoding if necessary.
+sample_string = 'Hello TensorFlow.'
+encoded_string = encoder.encode(sample_string)
+print('Encoded string is {}'.format(encoded_string))
+original_string = encoder.decode(encoded_string)
+print('The original string: "{}"'.format(original_string))
