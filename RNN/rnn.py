@@ -76,3 +76,11 @@ def sample_predict(sample_pred_text, pad):
   predictions = model.predict(tf.expand_dims(encoded_sample_pred_text, 0))
 
   return (predictions)
+
+
+# predict on a sample text without padding.
+
+sample_pred_text = ('The movie was cool. The animation and the graphics '
+                    'were out of this world. I would recommend this movie.')
+predictions = sample_predict(sample_pred_text, pad=False)
+print(predictions)
