@@ -23,3 +23,7 @@ def plot_graphs(history, metric):
 dataset, info = tfds.load('imdb_reviews/subwords8k', with_info=True,
                           as_supervised=True)
 train_dataset, test_dataset = dataset['train'], dataset['test']
+
+# The dataset info includes the encoder (a tfds.features.text.SubwordTextEncoder).
+encoder = info.features['text'].encoder
+print('Vocabulary size: {}'.format(encoder.vocab_size))
