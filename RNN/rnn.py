@@ -118,3 +118,15 @@ test_loss, test_acc = model.evaluate(test_dataset)
 print('Test Loss: {}'.format(test_loss))
 print('Test Accuracy: {}'.format(test_acc))
 # predict on a sample text without padding.
+sample_pred_text = ('The movie was not good. The animation and the graphics '
+                    'were terrible. I would not recommend this movie.')
+predictions = sample_predict(sample_pred_text, pad=False)
+print(predictions)
+# predict on a sample text with padding
+
+sample_pred_text = ('The movie was not good. The animation and the graphics '
+                    'were terrible. I would not recommend this movie.')
+predictions = sample_predict(sample_pred_text, pad=True)
+print(predictions)
+plot_graphs(history, 'accuracy')
+plot_graphs(history, 'loss')	
