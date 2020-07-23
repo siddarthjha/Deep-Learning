@@ -34,3 +34,5 @@ encoded_string = encoder.encode(sample_string)
 print('Encoded string is {}'.format(encoded_string))
 original_string = encoder.decode(encoded_string)
 print('The original string: "{}"'.format(original_string))
+
+assert original_string == sample_string
