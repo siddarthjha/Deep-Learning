@@ -36,4 +36,14 @@ sns.set(style='white', context='notebook', palette='deep')
 train = pd.read_csv("train.csv")
 test = pd.read_csv("test.csv")
 # You can take your own data or else download from kaggle
+Y_train = train["label"]
 
+# Drop 'label' column
+X_train = train.drop(labels = ["label"],axis = 1) 
+
+# free some space
+del train 
+
+g = sns.countplot(Y_train)
+
+Y_train.value_counts()
