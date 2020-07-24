@@ -16,7 +16,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 import seaborn as sns
-%matplotlib inline
 
 np.random.seed(2)
 
