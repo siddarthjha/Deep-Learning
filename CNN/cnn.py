@@ -165,3 +165,23 @@ Y_true = np.argmax(Y_val,axis = 1)
 confusion_mtx = confusion_matrix(Y_true, Y_pred_classes) 
 # plot the confusion matrix
 plot_confusion_matrix(confusion_mtx, classes = range(10)) 
+# Errors are difference between predicted labels and true labels
+errors = (Y_pred_classes - Y_true != 0)
+
+Y_pred_classes_errors = Y_pred_classes[errors]
+Y_pred_errors = Y_pred[errors]
+Y_true_errors = Y_true[errors]
+X_val_errors = X_val[errors]
+
+def display_errors(errors_index,img_errors,pred_errors, obs_errors):
+    """ This function shows 6 images with their predicted and real labels"""
+    n = 0
+    nrows = 2
+    ncols = 3
+    fig, ax = plt.subplots(nrows,ncols,sharex=True,sharey=True)
+    for row in range(nrows):
+        for col in range(ncols):
+            error = errors_index[n]
+            ax[row,col].imshow((img_errors[error]).reshape((28,28)))
+            ax[row,col].set_title("Predicted label :{}\nTrue label :{}".format(pred_errors[error],obs_errors[error]))
+            n += 1
