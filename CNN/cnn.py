@@ -91,3 +91,23 @@ model.add(Dense(10, activation = "softmax"))
 optimizer = RMSprop(lr=0.001, rho=0.9, epsilon=1e-08, decay=0.0)
 # Compile the model
 model.compile(optimizer = optimizer , loss = "categorical_crossentropy", metrics=["accuracy"])
+# Without data augmentation i obtained an accuracy of 0.98114
+#history = model.fit(X_train, Y_train, batch_size = batch_size, epochs = epochs, 
+# validation_data = (X_val, Y_val), verbose = 2)
+# With data augmentation to prevent overfitting (accuracy 0.99286)
+
+datagen = ImageDataGenerator(
+        featurewise_center=False,  # set input mean to 0 over the dataset
+        samplewise_center=False,  # set each sample mean to 0
+        featurewise_std_normalization=False,  # divide inputs by std of the dataset
+        samplewise_std_normalization=False,  # divide each input by its std
+        zca_whitening=False,  # apply ZCA whitening
+        rotation_range=10,  # randomly rotate images in the range (degrees, 0 to 180)
+        zoom_range = 0.1, # Randomly zoom image 
+        width_shift_range=0.1,  # randomly shift images horizontally (fraction of total width)
+        height_shift_range=0.1,  # randomly shift images vertically (fraction of total height)
+        horizontal_flip=False,  # randomly flip images
+        vertical_flip=False)  # randomly flip images
+
+
+datagen.fit(X_train)
