@@ -35,3 +35,5 @@ sns.set(style='white', context='notebook', palette='deep')
 # Load data
 train = pd.read_csv("train.csv")
 test = pd.read_csv("test.csv")
+# You can take your own data or else download from kaggle
+
