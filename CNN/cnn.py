@@ -50,3 +50,6 @@ Y_train.value_counts()
 # Check for null and missing values
 X_train.isnull().any().describe()
 test.isnull().any().describe()
+# Normalize the data
+X_train = X_train / 255.0
+test = test / 255.0
