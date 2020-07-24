@@ -31,3 +31,7 @@ from keras.preprocessing.image import ImageDataGenerator
 from keras.callbacks import ReduceLROnPlateau
 sns.set(style='white', context='notebook', palette='deep')
 # Using tensorflow backend
+
+# Load data
+train = pd.read_csv("train.csv")
+test = pd.read_csv("test.csv")
