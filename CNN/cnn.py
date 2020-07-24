@@ -47,3 +47,6 @@ del train
 g = sns.countplot(Y_train)
 
 Y_train.value_counts()
+# Check for null and missing values
+X_train.isnull().any().describe()
+test.isnull().any().describe()
