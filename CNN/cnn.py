@@ -62,3 +62,5 @@ Y_train = to_categorical(Y_train, num_classes = 10)
 random_seed = 2
 # Split the train and the validation set for the fitting
 X_train, X_val, Y_train, Y_val = train_test_split(X_train, Y_train, test_size = 0.1, random_state=random_seed)
+# Some examples
+g = plt.imshow(X_train[0][:,:,0])
